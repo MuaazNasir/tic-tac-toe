@@ -2,26 +2,110 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  user-select: none;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: #FAF0E6;
+}
+
+.head {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 30px 0 30px 0;
+  text-align: center;
+  color: #5C5470;
+  font-family: sans-serif;
+  text-shadow: #5C5470 15px 15px 50px;
+}
+
+
+.table {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  width: 50%;
+  height: 50%;
+  gap: 5px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+}
+
+.box {
+  background: #B9B4C7;
+  border: 2px solid #5C5470;
+  padding: 0.5px;
+  width: 10rem;
+  height: 10rem;
+  font-size: 100px;
+  text-align: center;
+  font-family: sans-serif;
+  border-radius: 10px;
+  transition: all;
+  transition-duration: 500ms;
+  color: #352F44;
+  cursor: pointer;
+  text-shadow: #5C5470 5px 5px 20px;
+  box-shadow: #c1bfc79c 15px 15px 20px;
+}
+
+.box:hover {
+  background: #352F44;
+  color: #B9B4C7;
+  text-shadow: #5C5470 15px 15px 20px;
+}
+
+#msg-box {
+  margin: 20px 0;
+  display: none;
+  padding: 15px 0;
+  background: #352F44;
+  text-align: center;
+  font-size: 20px;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #B9B4C7;
+  width: 100%;
+}
+
+.glow {
+  background: #352f44ef;
+  color: #B9B4C7;
+  animation: shake 0.5s infinite linear;
+}
+
+@keyframes shake {
+  0% {
+    rotate: calc(0deg);
+    background: #352f44ef;
+  }
+
+  25% {
+    rotate: calc(3deg);
+    background: #352f44da;
+  }
+
+  50% {
+    rotate: calc(0deg);
+    background: #352f44da;
+  }
+
+  75% {
+    rotate: calc(-3deg);
+    background: #352f44da;
+  }
+
+  100% {
+    rotate: calc(0deg);
+    background: #352f44ef;
+  }
 }
