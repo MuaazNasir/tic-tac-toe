@@ -79,7 +79,7 @@ const Handlers = ({ children }: { children: React.ReactNode }) => {
                 win.current = ({ isWin: true, winner: turn.current })
                 handleGlow(cords[0][2], cords[1][1], cords[2][0])
             }
-            else if (!cords.flat(Infinity).includes(null)) {
+            else if (!cords.flat(Infinity).includes(null) && win.current.isWin != true) {
                 win.current = ({ isWin: "tie", winner: null })
             }
 
